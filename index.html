@@ -4,578 +4,1328 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="Mariage d'Adélaïde et Victor - 3, 4 et 5 juillet 2028">
     <title>Adélaïde & Victor — 3-5 juillet 2028</title>
+    <link rel="preload" as="image" href="domaine.webp">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
+        /* ===== VARIABLES & RESET ===== */
+        :root {
+            --color-primary: #8B1A1A;
+            --color-primary-dark: #6b1515;
+            --color-bg: #ffffff;
+            --color-text: #555555;
+            --color-text-light: #777777;
+            --color-text-lighter: #999999;
+            --color-border: #e5e5e5;
+            --color-bg-light: #fafaf8;
+            --font-serif: 'Cormorant Garamond', serif;
+            --font-sans: 'Montserrat', sans-serif;
+            --transition-smooth: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition-fast: 0.2s ease;
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 8px 24px rgba(139, 26, 26, 0.15);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html { scroll-behavior: smooth; }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background: #fff;
-            color: #555;
-            font-weight: 300;
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
         }
 
-        /* Navigation */
+        body {
+            font-family: var(--font-sans);
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* Smooth scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--color-primary);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--color-primary-dark);
+        }
+
+        /* ===== SKIP LINK (ACCESSIBILITY) ===== */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--color-primary);
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 100;
+            font-size: 12px;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* ===== NAVIGATION ===== */
         nav {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(255, 255, 255, 0.97);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             z-index: 1000;
             padding: 25px 0;
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            animation: slideDown 0.6s var(--transition-smooth);
+            box-shadow: var(--shadow-sm);
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         nav .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 40px;
+            padding: 0 60px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         nav .logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 20px;
-            letter-spacing: 3px;
-            color: #8B1A1A;
-            font-weight: 400;
+            font-family: var(--font-serif);
+            font-size: 24px;
+            letter-spacing: 4px;
+            color: var(--color-primary);
+            font-weight: 300;
+            transition: transform var(--transition-fast);
+            cursor: pointer;
+        }
+
+        nav .logo:hover {
+            transform: scale(1.05);
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            gap: 45px;
+            gap: 60px;
         }
 
         nav a {
             text-decoration: none;
-            color: #555;
-            font-size: 12px;
-            letter-spacing: 1.5px;
+            color: var(--color-text-light);
+            font-size: 11px;
+            letter-spacing: 2px;
             font-weight: 400;
             text-transform: uppercase;
-            transition: color 0.3s;
+            position: relative;
+            transition: color var(--transition-fast);
+            cursor: pointer;
+            padding: 8px 0;
         }
 
-        nav a:hover { color: #8B1A1A; }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--color-primary);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform var(--transition-smooth);
+        }
 
-        /* Hero Section */
+        nav a:hover {
+            color: var(--color-primary);
+        }
+
+        nav a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        nav a:focus {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 4px;
+            border-radius: 2px;
+        }
+
+        /* Global focus styles for accessibility */
+        *:focus {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 2px;
+        }
+
+        button:focus {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 3px;
+        }
+
+        /* ===== HERO SECTION ===== */
         #hero {
             position: relative;
-            min-height: 100vh;
+            width: 100%;
+            height: 100vh;
+            margin-top: 80px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23d4a574" width="1200" height="800"/><path fill="%238B7355" d="M0 400 Q300 300 600 400 T1200 400 L1200 800 L0 800Z"/></svg>');
-            background-size: cover;
-            background-position: center;
-            margin-top: 70px;
-            color: #fff;
-            text-align: center;
+            background: linear-gradient(135deg, #fafaf8 0%, #fff 100%);
+            padding: 60px 40px;
+            overflow: hidden;
+        }
+
+        .hero-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-image-wrapper {
+            display: none;
+        }
+
+        .hero-image {
+            display: none;
+        }
+
+        .hero-overlay {
+            display: none;
         }
 
         .hero-content {
+            position: relative;
             z-index: 2;
-            max-width: 800px;
+            text-align: center;
+            color: var(--color-primary);
+            background: transparent;
+            padding: 60px 50px;
+            border-radius: 0;
+            animation: fadeInUp 0.8s var(--transition-smooth) 0.2s both;
+            box-shadow: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         .hero-content h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 120px;
+            font-family: var(--font-serif);
+            font-size: 140px;
             font-weight: 300;
             letter-spacing: 4px;
             margin-bottom: 20px;
-            line-height: 1;
+            line-height: 0.9;
+            text-shadow: none;
         }
 
         .hero-content h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 28px;
-            font-weight: 300;
+            font-family: var(--font-sans);
+            font-size: 16px;
             letter-spacing: 2px;
-            margin-bottom: 50px;
-            text-transform: uppercase;
-        }
-
-        .countdown {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            margin: 60px 0;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .countdown-item {
-            text-align: center;
-        }
-
-        .countdown-number {
-            font-size: 48px;
             font-weight: 300;
-            margin-bottom: 10px;
+            margin: 25px 0;
+            text-transform: uppercase;
+            text-shadow: none;
         }
 
-        .countdown-label {
-            font-size: 11px;
-            letter-spacing: 1px;
-            opacity: 0.9;
+        .hero-content p {
+            font-size: 14px;
+            letter-spacing: 2px;
+            margin: 12px 0;
+            text-shadow: none;
+            opacity: 1;
         }
 
-        /* Sections */
+        .hero-divider {
+            width: 60px;
+            height: 1px;
+            background: var(--color-primary);
+            margin: 20px auto;
+            opacity: 0.4;
+        }
+
+        /* ===== SECTIONS GÉNÉRALES ===== */
         section {
-            padding: 120px 40px;
-            max-width: 1200px;
+            padding: 100px 60px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
         section h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 64px;
+            font-family: var(--font-serif);
+            font-size: 72px;
             font-weight: 300;
-            color: #8B1A1A;
-            margin-bottom: 60px;
+            color: var(--color-primary);
+            margin-bottom: 80px;
             text-align: center;
+            letter-spacing: 2px;
+            animation: fadeInUp 0.8s var(--transition-smooth);
         }
 
-        section h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 36px;
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .divider {
+            width: 60px;
+            height: 1px;
+            background: var(--color-primary);
+            margin: 0 auto 60px;
+            opacity: 0.4;
+            animation: widthExpand 0.8s var(--transition-smooth) 0.2s both;
+        }
+
+        @keyframes widthExpand {
+            from { width: 0; }
+            to { width: 60px; }
+        }
+
+        .intro {
+            font-size: 16px;
+            color: var(--color-text-light);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 100px;
+            line-height: 1.9;
             font-weight: 300;
-            color: #8B1A1A;
-            margin-bottom: 30px;
+            animation: fadeInUp 0.8s var(--transition-smooth) 0.3s both;
+            word-break: break-word;
         }
 
-        .intro-text {
-            font-size: 15px;
-            color: #777;
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 80px;
-            line-height: 1.8;
+        /* ===== IMAGES ===== */
+        .image-full {
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            height: 500px;
+            margin: 70px 0;
+            border-radius: 4px;
+            overflow: hidden;
+            animation: fadeInUp 0.8s var(--transition-smooth) 0.4s both;
+            box-shadow: var(--shadow-md);
         }
 
-        /* Programme Cards */
-        .programme-grid {
+        .image-full img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            transition: transform 0.8s var(--transition-smooth);
+            will-change: transform;
+        }
+
+        #lieu .image-full:first-of-type {
+            background-color: var(--color-bg);
+        }
+
+        #lieu .image-full:first-of-type img {
+            object-fit: contain !important;
+        }
+
+        .image-full:hover img {
+            transform: scale(1.03);
+        }
+
+        /* ===== PROGRAMME ===== */
+        .programme {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            margin: 80px 0;
+            gap: 50px;
+            margin: 100px 0;
         }
 
-        .programme-card {
+        .programme-item {
             text-align: center;
-            overflow: hidden;
+            padding: 40px 30px;
             border-radius: 4px;
+            background: transparent;
+            transition: all var(--transition-smooth);
+            animation: fadeInUp 0.8s var(--transition-smooth);
+            cursor: pointer;
         }
 
-        .programme-card-image {
-            width: 100%;
-            height: 300px;
-            background: linear-gradient(135deg, #d4a574 0%, #8B7355 100%);
-            margin-bottom: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 80px;
-            opacity: 0.8;
+        .programme-item:nth-child(1) { animation-delay: 0.2s; }
+        .programme-item:nth-child(2) { animation-delay: 0.3s; }
+        .programme-item:nth-child(3) { animation-delay: 0.4s; }
+
+        .programme-item:hover {
+            background: rgba(139, 26, 26, 0.05);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
         }
 
-        .programme-card h4 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 28px;
+        .programme-item h3 {
+            font-family: var(--font-serif);
+            font-size: 32px;
             font-weight: 300;
-            color: #8B1A1A;
-            margin-bottom: 15px;
+            color: var(--color-primary);
+            margin-bottom: 25px;
+            transition: color var(--transition-fast);
         }
 
-        .programme-card p {
-            font-size: 14px;
-            color: #777;
-            line-height: 1.8;
+        .programme-item:hover h3 {
+            color: var(--color-primary-dark);
         }
 
         .time {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 300;
-            color: #8B1A1A;
-            margin: 15px 0;
+            color: var(--color-primary);
+            margin: 20px 0;
             letter-spacing: 1px;
         }
 
-        /* Infos Grid */
-        .infos-grid {
+        .location {
+            font-size: 13px;
+            color: var(--color-text-lighter);
+            letter-spacing: 1px;
+            margin: 15px 0;
+        }
+
+        .description {
+            font-size: 14px;
+            color: var(--color-text-light);
+            line-height: 1.8;
+            margin-top: 20px;
+        }
+
+        /* ===== INFOS PRATIQUES ===== */
+        .infos {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 60px;
-            margin: 80px 0;
+            gap: 80px;
+            margin: 100px 0;
         }
 
-        .info-card {
+        .info-item {
             text-align: center;
+            padding: 40px 30px;
+            border-radius: 4px;
+            background: transparent;
+            transition: all var(--transition-smooth);
+            animation: fadeInUp 0.8s var(--transition-smooth);
+            cursor: pointer;
         }
 
-        .info-card h4 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 24px;
+        .info-item:nth-child(1) { animation-delay: 0.2s; }
+        .info-item:nth-child(2) { animation-delay: 0.3s; }
+        .info-item:nth-child(3) { animation-delay: 0.4s; }
+        .info-item:nth-child(4) { animation-delay: 0.5s; }
+
+        .info-item:hover {
+            background: rgba(139, 26, 26, 0.05);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .info-item h3 {
+            font-family: var(--font-serif);
+            font-size: 28px;
             font-weight: 300;
-            color: #8B1A1A;
-            margin-bottom: 20px;
+            color: var(--color-primary);
+            margin-bottom: 25px;
+            transition: color var(--transition-fast);
         }
 
-        .info-card p {
+        .info-item:hover h3 {
+            color: var(--color-primary-dark);
+        }
+
+        .info-item p {
             font-size: 14px;
-            color: #777;
-            line-height: 1.8;
+            color: var(--color-text-light);
+            line-height: 1.9;
         }
 
-        /* Lieu Section */
-        .lieu-section {
-            background: #fafaf8;
+        .contact-info {
+            text-align: center;
+            margin-top: 80px;
+            font-size: 13px;
+            color: var(--color-text-lighter);
+            animation: fadeInUp 0.8s var(--transition-smooth) 0.6s both;
+        }
+
+        .contact-info strong {
+            color: var(--color-primary);
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .contact-info a {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: all var(--transition-fast);
+            border-bottom: 1px solid transparent;
+        }
+
+        .contact-info a:hover {
+            border-bottom-color: var(--color-primary);
+            opacity: 0.8;
+        }
+
+        .contact-info a:focus {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+
+        /* ===== FORMULAIRE RSVP ===== */
+        .rsvp-box {
+            max-width: 700px;
+            margin: 80px auto 0;
+            background: var(--color-bg-light);
             padding: 80px;
             border-radius: 4px;
-            text-align: center;
-            margin: 80px 0;
-        }
-
-        .lieu-section h3 {
-            margin-bottom: 30px;
-        }
-
-        .lieu-section p {
-            font-size: 15px;
-            color: #777;
-            line-height: 1.8;
-            max-width: 600px;
-            margin: 0 auto 30px;
-        }
-
-        /* Divider */
-        .divider {
-            width: 50px;
-            height: 1px;
-            background: #8B1A1A;
-            margin: 60px auto;
-            opacity: 0.3;
-        }
-
-        /* RSVP Form */
-        .rsvp-section {
-            max-width: 700px;
-            margin: 0 auto;
+            animation: fadeInUp 0.8s var(--transition-smooth) 0.4s both;
+            box-shadow: var(--shadow-md);
         }
 
         .rsvp-form {
-            background: #fafaf8;
-            padding: 60px;
-            border-radius: 4px;
-        }
-
-        .form-group {
-            margin-bottom: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
         }
 
         .rsvp-form input,
         .rsvp-form select,
         .rsvp-form textarea {
             width: 100%;
-            padding: 14px;
-            border: 1px solid #e0e0e0;
-            border-radius: 2px;
-            font-family: 'Montserrat', sans-serif;
+            padding: 16px;
+            margin: 18px 0;
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            font-family: var(--font-sans);
             font-size: 13px;
-            color: #555;
-            background: #fff;
+            color: var(--color-text);
+            background: var(--color-bg);
+            transition: all var(--transition-fast);
+            -webkit-appearance: none;
+            appearance: none;
         }
 
         .rsvp-form input:focus,
         .rsvp-form select:focus,
         .rsvp-form textarea:focus {
             outline: none;
-            border-color: #8B1A1A;
-            background: #fff;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgba(139, 26, 26, 0.1);
+            background: rgba(139, 26, 26, 0.02);
+            transform: translateY(-2px);
+        }
+
+        .rsvp-form textarea {
+            resize: none;
+            font-family: var(--font-sans);
         }
 
         .rsvp-form button {
             width: 100%;
             padding: 16px;
-            background: #8B1A1A;
+            background: var(--color-primary);
             color: #fff;
-            border: none;
-            border-radius: 2px;
-            font-size: 12px;
+            border: 2px solid var(--color-primary);
+            border-radius: 4px;
+            font-size: 11px;
             letter-spacing: 2px;
-            font-weight: 400;
+            font-weight: 500;
             text-transform: uppercase;
             cursor: pointer;
-            margin-top: 20px;
-            transition: all 0.3s;
+            margin-top: 30px;
+            transition: all var(--transition-smooth);
+            font-family: var(--font-sans);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .rsvp-form button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s var(--transition-smooth);
         }
 
         .rsvp-form button:hover {
-            background: #6b1515;
+            background: var(--color-primary-dark);
+            border-color: var(--color-primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
         }
 
-        /* Footer */
-        footer {
-            padding: 80px 40px;
-            border-top: 1px solid #e0e0e0;
+        .rsvp-form button:hover::before {
+            left: 100%;
+        }
+
+        .rsvp-form button:active {
+            transform: translateY(0);
+        }
+
+        .form-message {
+            padding: 12px 16px;
+            border-radius: 4px;
+            font-size: 13px;
+            margin-bottom: 16px;
+            animation: fadeInUp 0.4s var(--transition-smooth);
+            display: none;
+        }
+
+        .form-message.show {
+            display: block;
+        }
+
+        .form-message.success {
+            background: rgba(76, 175, 80, 0.1);
+            color: #2e7d32;
+            border: 1px solid rgba(76, 175, 80, 0.3);
+        }
+
+        .form-message.error {
+            background: rgba(244, 67, 54, 0.1);
+            color: #c62828;
+            border: 1px solid rgba(244, 67, 54, 0.3);
+        }
+
+        /* ===== CADEAU DE MARIAGE ===== */
+        .cadeau-hero {
+            position: relative;
+            width: 100%;
+            height: 550px;
+            background-image: url('polynesia.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 80px auto 60px auto;
+            overflow: hidden;
+        }
+
+        .cadeau-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .cadeau-hero-content {
+            position: relative;
+            z-index: 2;
             text-align: center;
-            font-size: 12px;
-            color: #999;
-            letter-spacing: 1px;
+            max-width: 900px;
+            padding: 60px 40px;
+            margin: 0 auto;
         }
 
-        footer p { margin: 8px 0; }
+        .cadeau-box {
+            max-width: 800px;
+            margin: 80px auto 0;
+            background: var(--color-bg-light);
+            padding: 100px 80px;
+            border-radius: 4px;
+            animation: fadeInUp 0.8s var(--transition-smooth) 0.4s both;
+            box-shadow: var(--shadow-md);
+        }
 
-        /* Responsive */
-        @media (max-width: 1024px) {
-            section { padding: 80px 30px; }
+        .cadeau-box h3 {
+            font-family: var(--font-serif);
+            font-size: 32px;
+            font-weight: 300;
+            color: var(--color-primary);
+            text-align: center;
+            margin-bottom: 30px;
+        }
 
-            .programme-grid {
-                grid-template-columns: 1fr;
+        .virement-info {
+            background: rgba(139, 26, 26, 0.05);
+            padding: 40px;
+            border-radius: 4px;
+            margin: 40px 0;
+            border-left: 3px solid var(--color-primary);
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(139, 26, 26, 0.1);
+            font-size: 14px;
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-row .label {
+            font-weight: 500;
+            color: var(--color-primary);
+            min-width: 100px;
+        }
+
+        .info-row .value {
+            color: var(--color-text);
+            text-align: right;
+            flex: 1;
+            margin-left: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .cadeau-hero {
+                height: 500px;
+                margin: 100px 0 60px 0;
+                background-attachment: scroll;
             }
 
-            .infos-grid {
+            .cadeau-hero-content {
+                padding: 40px 20px;
+            }
+
+            .cadeau-box {
+                padding: 60px 40px;
+                margin: 80px auto 0;
+            }
+
+            .virement-info {
+                padding: 40px;
+            }
+
+            .info-row {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 12px 0;
+            }
+
+            .info-row .value {
+                text-align: left;
+                margin-left: 0;
+                margin-top: 8px;
+            }
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            padding: 100px 60px;
+            border-top: 1px solid var(--color-border);
+            text-align: center;
+            font-size: 12px;
+            color: var(--color-text-lighter);
+            letter-spacing: 1px;
+            background: rgba(139, 26, 26, 0.02);
+            animation: fadeIn 0.8s var(--transition-smooth) 0.6s both;
+        }
+
+        footer p {
+            margin: 10px 0;
+            transition: color var(--transition-fast);
+        }
+
+        footer p:first-child {
+            font-family: var(--font-serif);
+            font-size: 18px;
+            color: var(--color-primary);
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        footer p:hover {
+            color: var(--color-primary-dark);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1200px) {
+            section {
+                padding: 100px 40px;
+            }
+
+            nav .container {
+                padding: 0 40px;
+            }
+
+            .programme {
                 grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .infos {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            nav ul {
                 gap: 40px;
             }
 
-            nav ul { gap: 25px; }
+            .hero-content h1 {
+                font-size: 100px;
+            }
+
+            .hero-content h2 {
+                font-size: 16px;
+            }
+
+            .rsvp-box {
+                padding: 60px;
+            }
         }
 
-        @media (max-width: 640px) {
-            .hero-content h1 { font-size: 70px; }
-            .hero-content h2 { font-size: 18px; }
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 0;
+            }
 
-            section { padding: 60px 20px; }
-            section h2 { font-size: 40px; }
+            nav .container {
+                padding: 0 20px;
+            }
 
-            .countdown {
-                grid-template-columns: repeat(2, 1fr);
+            nav ul {
                 gap: 20px;
             }
 
-            nav ul { flex-direction: column; gap: 15px; }
-            nav a { font-size: 11px; }
+            nav a {
+                font-size: 10px;
+            }
+
+            #hero {
+                padding: 40px 20px;
+                margin-top: 60px;
+            }
+
+            .hero-image-wrapper {
+                border-radius: 2px;
+            }
+
+            .hero-content {
+                padding: 40px 30px;
+                border-radius: 2px;
+            }
+
+            .hero-content h1 {
+                font-size: 56px;
+                margin-bottom: 15px;
+            }
+
+            .hero-content h2 {
+                font-size: 14px;
+                margin-bottom: 20px;
+            }
+
+            .hero-content p {
+                font-size: 12px;
+            }
+
+            section {
+                padding: 80px 20px;
+            }
+
+            section h2 {
+                font-size: 48px;
+                margin-bottom: 50px;
+            }
+
+            .divider {
+                width: 40px;
+            }
+
+            .intro {
+                font-size: 14px;
+                margin-bottom: 60px;
+            }
+
+            .image-full {
+                height: 300px;
+                margin: 60px 0;
+                border-radius: 2px;
+            }
+
+            .programme {
+                gap: 40px;
+            }
+
+            .programme-item {
+                padding: 30px 20px;
+            }
+
+            .programme-item h3 {
+                font-size: 24px;
+                margin-bottom: 15px;
+            }
+
+            .time {
+                font-size: 14px;
+            }
+
+            .infos {
+                gap: 40px;
+            }
+
+            .info-item {
+                padding: 30px 20px;
+            }
+
+            .info-item h3 {
+                font-size: 22px;
+                margin-bottom: 15px;
+            }
+
+            .rsvp-box {
+                margin: 60px auto 0;
+                padding: 40px;
+            }
+
+            .rsvp-form input,
+            .rsvp-form select,
+            .rsvp-form textarea {
+                margin: 14px 0;
+                padding: 14px;
+                font-size: 14px;
+            }
+
+            footer {
+                padding: 60px 20px;
+                font-size: 11px;
+            }
+
+            footer p:first-child {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                gap: 10px;
+                justify-content: center;
+            }
+
+            .hero-content {
+                padding: 30px 20px;
+            }
+
+            .hero-content h1 {
+                font-size: 42px;
+            }
+
+            section {
+                padding: 60px 15px;
+            }
+
+            section h2 {
+                font-size: 36px;
+            }
+
+            .rsvp-box {
+                padding: 30px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
     <!-- Navigation -->
     <nav>
         <div class="container">
-            <div class="logo">A & V</div>
-            <ul>
+            <div class="logo" role="button" tabindex="0" aria-label="Retour à l'accueil">A & V</div>
+            <ul role="navigation" aria-label="Navigation principale">
+                <li><a href="#lieu">Lieu</a></li>
                 <li><a href="#programme">Programme</a></li>
                 <li><a href="#infos">Infos</a></li>
                 <li><a href="#rsvp">RSVP</a></li>
+                <li><a href="#cadeau">Cadeau</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero -->
-    <section id="hero">
-        <div class="hero-content">
-            <h1>Adélaïde<br>& Victor</h1>
-            <h2>Se marient le 3 juillet 2028</h2>
-            <p style="color: #fff; font-size: 16px; letter-spacing: 1px;">Drôme Provençale</p>
-
-            <div class="countdown">
-                <div class="countdown-item">
-                    <div class="countdown-number" id="days">542</div>
-                    <div class="countdown-label">JOURS</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-number" id="hours">18</div>
-                    <div class="countdown-label">HEURES</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-number" id="minutes">45</div>
-                    <div class="countdown-label">MINUTES</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-number" id="seconds">30</div>
-                    <div class="countdown-label">SECONDES</div>
-                </div>
+    <section id="hero" role="banner">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Adélaïde<br>& Victor</h1>
+                <h2>Se marient</h2>
+                <div class="hero-divider"></div>
+                <p>3 • 4 • 5 juillet 2028</p>
+                <p style="margin-top: 15px; font-size: 13px;">Les Terres de Sarson — Grignan</p>
             </div>
         </div>
     </section>
 
-    <!-- Lieu -->
-    <section>
-        <h2>Terres des Arson</h2>
-        <div class="divider"></div>
-        <div class="lieu-section">
-            <h3>Un lieu d'exception</h3>
-            <p>Dans le cœur de la Drôme Provençale, Terres des Arson offre un cadre idyllique pour célébrer notre union. Entre vignes et lavandes, nous vous accueillons pour trois jours inoubliables.</p>
-            <p style="font-size: 13px; color: #999;">Coordonnées GPS et plan d'accès fournis avec votre invitation</p>
-        </div>
-    </section>
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Lieu -->
+        <section id="lieu">
+            <h2>Les Terres de Sarson</h2>
+            <div class="divider"></div>
+            <p class="intro">Au cœur de la Drôme Provençale, un domaine d'exception nous accueille pour célébrer notre amour. Entre vignes, lavandes et pierre dorée, nous partageons trois jours inoubliables avec les personnes qui nous sont chères.</p>
 
-    <!-- Programme -->
-    <section id="programme">
-        <h2>Le Programme</h2>
-        <div class="divider"></div>
-        <p class="intro-text">Trois jours de célébration, d'émotion et de partage en compagnie de nos proches.</p>
-
-        <div class="programme-grid">
-            <div class="programme-card">
-                <div class="programme-card-image">🎭</div>
-                <h4>Cérémonie Laïque</h4>
-                <p class="time">Samedi 3 juillet<br>15h00</p>
-                <p>Un moment intime et personnel pour célébrer notre union devant les personnes qui nous sont chères.</p>
-                <p style="margin-top: 15px; font-size: 12px; color: #999;">Accueil à partir de 14h30</p>
+            <div class="image-full" style="height: 750px;">
+                <img src="tsam-37.webp" alt="Salle des Terres de Sarson" loading="lazy" width="1440" height="500" style="object-fit: cover; object-position: center;">
             </div>
 
-            <div class="programme-card">
-                <div class="programme-card-image">🍾</div>
-                <h4>Cocktail & Dîner</h4>
-                <p class="time">Samedi 3 juillet<br>18h00 — 23h00</p>
-                <p>Une soirée gastronomique aux saveurs provençales, suivie de danses jusqu'à minuit sous les étoiles.</p>
-                <p style="margin-top: 15px; font-size: 12px; color: #999;">Menu gastronomique local</p>
+            <div class="image-full">
+                <img src="tsam-81.webp" alt="Domaine des Terres de Sarson" loading="lazy" width="1440" height="500">
+            </div>
+        </section>
+
+        <!-- Programme -->
+        <section id="programme">
+            <h2>Le Programme</h2>
+            <div class="divider"></div>
+            <p class="intro">Trois jours de célébration, d'émotion et de partage en compagnie de nos proches.</p>
+
+            <div class="programme" role="region" aria-label="Programme des événements">
+                <div class="programme-item">
+                    <h3>Cérémonie Laïque</h3>
+                    <p class="time">Samedi 3 juillet<br>15h00</p>
+                    <p class="location">Les Terres de Sarson</p>
+                    <p class="description">Accueil à partir de 14h30. Célébration à 15h00.</p>
+                    <p style="margin-top: 20px; font-size: 12px; color: #999;">Tenue élégante de cocktail<br>Le blanc est réservé à la mariée</p>
+                </div>
+
+                <div class="programme-item">
+                    <h3>Cocktail & Dîner</h3>
+                    <p class="time">Samedi 3 juillet<br>18h00 — 04h30</p>
+                    <p class="location">Les Terres de Sarson</p>
+                    <p class="description">Soirée gastronomique provençale sous les étoiles. Danse jusqu'à l'aube.</p>
+                    <p style="margin-top: 20px; font-size: 12px; color: #999;">Menu local et raffiné<br>Danse jusqu'à l'aube</p>
+                </div>
+
+                <div class="programme-item">
+                    <h3>Brunch</h3>
+                    <p class="time">Dimanche 4 juillet<br>11h00 — 14h00</p>
+                    <p class="location">Les Terres de Sarson</p>
+                    <p class="description">Brunch gourmand en terrasse avec vue sur le domaine.</p>
+                    <p style="margin-top: 20px; font-size: 12px; color: #999;">Brunch gourmand<br>Tenue décontractée</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Infos Pratiques -->
+        <section id="infos">
+            <h2>Infos Pratiques</h2>
+            <div class="divider"></div>
+            <p class="intro">Toutes les informations utiles pour préparer votre venue et en profiter pleinement.</p>
+
+            <div class="infos" role="region" aria-label="Informations pratiques">
+                <div class="info-item">
+                    <h3>Accès & Transport</h3>
+                    <p style="text-align: left; font-size: 13px; line-height: 1.8;">
+                        <strong>Lieu de réception</strong><br>
+                        Domaine de Sarson, Quartier Sarson, 26230 Grignan (Drôme provençale)<br><br>
+
+                        <strong>En voiture</strong><br>
+                        Autoroute A7, sortie n°18 Montélimar-Sud, puis environ 25 min par Grignan. Parking sur place.<br><br>
+
+                        <strong>Gare de Montélimar:</strong> 30 min (25 km)<br>
+                        TGV directs depuis Paris (environ 3h, quelques départs par jour), TER depuis Lyon.<br><br>
+
+                        <strong>Gare de Valence TGV:</strong> 1h (90 km)<br>
+                        Beaucoup plus de TGV depuis Paris (2h15), Lille, Lyon et l'aéroport de Roissy-CDG.<br><br>
+
+                        <strong>Location de voiture:</strong> agences à Montélimar, Valence TGV, Avignon TGV et dans les deux aéroports. Nous vous recommandons de réserver tôt, car le domaine est isolé et peu desservi par les taxis.<br><br>
+
+                        Plan d'accès détaillé fourni avec votre invitation.
+                    </p>
+                </div>
+
+                <div class="info-item">
+                    <h3>Hébergement & Parking</h3>
+                    <p><strong>113 couchages sur place</strong><br>37 hébergements variés au domaine<br><br>Les chambres seront attribuées et les détails vous seront indiqués par email après votre confirmation.<br><br>Parking gratuit sur le domaine</p>
+                </div>
+
+                <div class="info-item">
+                    <h3>Tenue</h3>
+                    <p><strong>Samedi 3 & Dimanche 4</strong><br>Élégance de cocktail<br>Tonalités claires et pastel — le blanc est réservé à la mariée<br><br><strong>Horaires</strong><br>Accueil 14h30 · Cérémonie 15h00 · Cocktail & Dîner 18h00-04h30</p>
+                </div>
+
+                <div class="info-item">
+                    <h3>Célébration entre adultes</h3>
+                    <p>Nous avons choisi de réserver cette célébration aux adultes, pour que chacun puisse savourer pleinement ce moment privilégié.</p>
+                </div>
+
             </div>
 
-            <div class="programme-card">
-                <div class="programme-card-image">🥐</div>
-                <h4>Brunch</h4>
-                <p class="time">Dimanche 4 juillet<br>11h00 — 14h00</p>
-                <p>Un dernier moment convivial en famille et entre amis, avant les adieux. Buffet champêtre en terrasse.</p>
-                <p style="margin-top: 15px; font-size: 12px; color: #999;">Tenue décontractée</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Infos Pratiques -->
-    <section id="infos">
-        <h2>Infos Pratiques</h2>
-        <div class="divider"></div>
-        <p class="intro-text">Toutes les informations utiles pour préparer votre venue.</p>
+        <!-- RSVP -->
+        <section id="rsvp">
+            <h2>Confirmez votre présence</h2>
+            <div class="divider"></div>
+            <p class="intro">Merci de confirmer avant le <strong>15 mai 2028</strong></p>
 
-        <div class="infos-grid">
-            <div class="info-card">
-                <h4>🚗 Accès & Parking</h4>
-                <p><strong>Gare de Montélimar</strong> — 20 minutes<br>Accès TGV Paris, Lyon<br><br><strong>Gare d'Avignon</strong> — 50 minutes<br>Aéroport Marseille — 90 minutes<br><br>Parking gratuit sur place</p>
+            <div class="rsvp-box">
+                <form class="rsvp-form" onsubmit="handleRSVP(event)" novalidate aria-label="Formulaire RSVP">
+                    <div class="form-message" role="alert" aria-live="polite"></div>
+                    <input type="text" placeholder="Votre nom complet" required aria-label="Nom complet" name="name">
+                    <input type="email" placeholder="Votre email" required aria-label="Email" name="email">
+                    <input type="tel" placeholder="Votre téléphone" required aria-label="Téléphone" name="phone">
+                    <select required aria-label="Confirmez votre présence" name="presence">
+                        <option value="">Confirmez votre présence</option>
+                        <option value="yes">Avec joie, je confirme</option>
+                        <option value="no">Avec regret, je ne peux pas venir</option>
+                    </select>
+                    <input type="number" placeholder="Nombre de personnes" min="1" value="1" required aria-label="Nombre de personnes" name="guests">
+                    <textarea placeholder="Message (optionnel)" rows="3" aria-label="Message optionnel" name="message"></textarea>
+                    <button type="submit">Confirmer ma présence</button>
+                </form>
+            </div>
+        </section>
+        <!-- Cadeau de Mariage -->
+        <section id="cadeau">
+            <h2>Cadeau de Mariage</h2>
+            <div class="divider"></div>
+            <p class="intro">Votre présence est le plus beau des cadeaux. Si vous souhaitez nous offrir quelque chose, nous avons un rêve : une lune de miel en Polynésie française, au cœur du Pacifique sud.</p>
+
+            <div class="cadeau-hero">
+                <div class="cadeau-hero-overlay"></div>
+                <div class="cadeau-hero-content">
+                    <p style="font-size: 17px; color: #fff; line-height: 2.2; margin-bottom: 60px;">
+                        <strong style="font-size: 20px;">Un voyage aux îles du rêve</strong><br><br>
+                        Bora-Bora, Tahiti, Moorea, Fakarava... Les eaux turquoise du Pacifique, les plages de sable blanc, les lagons aux mille nuances de bleu. Un moment hors du temps pour célébrer notre amour au paradis.<br><br>
+                        <em>« Voyager, c'est vivre » — Mark Twain</em>
+                    </p>
+                </div>
             </div>
 
-            <div class="info-card">
-                <h4>🏨 Hébergement</h4>
-                <p>Une sélection de chambres d'hôtes, gîtes et hôtels de charme à proximité sera fournie avec votre invitation. À partir de 15 minutes du domaine.</p>
+            <div class="cadeau-box">
+                <h3>Contribuer à notre voyage</h3>
+                <p style="margin: 30px 0; font-size: 15px; line-height: 1.9;">
+                    Si vous souhaitez nous aider à financer ce merveilleux voyage, vous pouvez effectuer un virement sur notre compte:
+                </p>
+
+                <div class="virement-info">
+                    <div class="info-row">
+                        <span class="label">Titulaire:</span>
+                        <span class="value">Adélaïde et Victor BOISSAY</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">IBAN:</span>
+                        <span class="value" style="font-family: 'Courier New', monospace; font-weight: 500;">FR76 2823 3000 0111 0778 1427 375</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">BIC:</span>
+                        <span class="value" style="font-family: 'Courier New', monospace; font-weight: 500;">REVOFRP2</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Banque:</span>
+                        <span class="value">Revolut Bank</span>
+                    </div>
+                </div>
+
+                <p style="margin-top: 40px; font-size: 13px; color: #999; text-align: center;">
+                    Merci de votre générosité et de votre amour. ✈️ 🌴
+                </p>
             </div>
 
-            <div class="info-card">
-                <h4>👗 Tenue</h4>
-                <p><strong>Samedi 3 & Dimanche 4</strong><br>Élégance de cocktail<br>Tonalités blanc, ivoire, beige<br><br><strong>Lundi 5 (optionnel)</strong><br>Tenue décontractée</p>
+            <div style="margin-top: 100px; text-align: center;">
+                <p style="font-size: 13px; color: var(--color-text-lighter); letter-spacing: 1px; margin-bottom: 30px;">
+                    Chaque contribution nous rapproche de ce rêve polynésien
+                </p>
             </div>
-
-            <div class="info-card">
-                <h4>🍽️ Régime Alimentaire</h4>
-                <p>Végétarien, vegan, sans gluten ou allergies alimentaires ? Aucun problème ! Mentionnez-le lors de votre confirmation.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- RSVP -->
-    <section id="rsvp" class="rsvp-section">
-        <h2>Confirmez votre présence</h2>
-        <div class="divider"></div>
-        <p class="intro-text">Merci de confirmer avant le <strong>15 mai 2028</strong></p>
-
-        <form class="rsvp-form" onsubmit="handleRSVP(event)">
-            <div class="form-group">
-                <input type="text" placeholder="Votre nom complet *" required>
-            </div>
-            <div class="form-group">
-                <input type="email" placeholder="Votre email *" required>
-            </div>
-            <div class="form-group">
-                <input type="tel" placeholder="Votre téléphone *" required>
-            </div>
-            <div class="form-group">
-                <select required>
-                    <option value="">Confirmez votre présence *</option>
-                    <option value="yes">Avec joie, je confirme ma présence</option>
-                    <option value="no">Avec regret, je ne peux pas venir</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <input type="number" placeholder="Nombre de personnes *" min="1" value="1" required>
-            </div>
-            <div class="form-group">
-                <select required>
-                    <option value="">Régime alimentaire *</option>
-                    <option value="omnivore">Sans restrictions</option>
-                    <option value="vegan">Vegan</option>
-                    <option value="vegetarian">Végétarien</option>
-                    <option value="glutenfree">Sans gluten</option>
-                    <option value="other">Autre</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <textarea placeholder="Message (optionnel)" rows="3"></textarea>
-            </div>
-            <button type="submit">CONFIRMER MA PRÉSENCE</button>
-        </form>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer>
+    <footer role="contentinfo">
         <p>Adélaïde & Victor</p>
-        <p>3 • 4 • 5 juillet 2028 — Terres des Arson</p>
-        <p style="margin-top: 20px; font-size: 11px;">Merci de votre présence</p>
+        <p>3 • 4 • 5 juillet 2028 — Les Terres de Sarson, Grignan</p>
+        <p style="margin-top: 20px; font-size: 11px; opacity: 0.8;">Merci de votre présence</p>
     </footer>
 
     <script>
-        // Countdown
-        function updateCountdown() {
-            const weddingDate = new Date('July 3, 2028').getTime();
-            const now = new Date().getTime();
-            const distance = weddingDate - now;
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById('days').textContent = days;
-            document.getElementById('hours').textContent = hours;
-            document.getElementById('minutes').textContent = minutes;
-            document.getElementById('seconds').textContent = seconds;
-        }
-
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
-
-        // RSVP
+        // ===== RSVP FORM HANDLER =====
         function handleRSVP(event) {
             event.preventDefault();
-            alert('Merci ! Votre RSVP a bien été reçu. À bientôt !');
-            event.target.reset();
+            const form = event.target;
+            const button = form.querySelector('button');
+            const messageEl = form.querySelector('.form-message');
+            const originalText = button.textContent;
+
+            // Validate form
+            if (!form.checkValidity()) {
+                messageEl.textContent = '⚠️ Veuillez remplir tous les champs requis.';
+                messageEl.classList.add('error', 'show');
+                messageEl.classList.remove('success');
+                return;
+            }
+
+            // Collect form data
+            const formData = new FormData(form);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                presence: formData.get('presence'),
+                guests: formData.get('guests'),
+                message: formData.get('message'),
+                timestamp: new Date().toISOString()
+            };
+
+            // Log form data (for development - replace with actual backend call)
+            console.log('RSVP Data:', data);
+
+            // Show success message
+            button.disabled = true;
+            button.textContent = 'Merci ! RSVP confirmé ✓';
+            button.style.background = 'var(--color-primary-dark)';
+
+            messageEl.textContent = '✓ Votre RSVP a été confirmé avec succès. Merci !';
+            messageEl.classList.add('success', 'show');
+            messageEl.classList.remove('error');
+
+            setTimeout(() => {
+                form.reset();
+                button.textContent = originalText;
+                button.disabled = false;
+                button.style.background = '';
+                messageEl.classList.remove('show');
+            }, 3000);
         }
 
-        // Smooth scroll
+        // ===== SMOOTH SCROLL NAVIGATION =====
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
+        });
+
+        // Parallax disabled - hero image stays static
+
+        // ===== INTERSECTION OBSERVER FOR ANIMATIONS =====
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > *').forEach(el => {
+            if (el.tagName !== 'STYLE') {
+                observer.observe(el);
+            }
+        });
+
+        // ===== FOCUS MANAGEMENT =====
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                if (document.activeElement) {
+                    document.activeElement.blur();
+                }
+            }
+        });
+
+        // ===== IMAGE LOADING ERROR HANDLING =====
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('error', function() {
+                console.error('Image failed to load:', this.src);
+                this.style.opacity = '0.7';
+                this.setAttribute('alt', 'Image non disponible');
+            });
+        });
+
+        // ===== FORM INPUT VALIDATION FEEDBACK =====
+        document.querySelectorAll('.rsvp-form input, .rsvp-form select').forEach(field => {
+            field.addEventListener('blur', function() {
+                if (this.hasAttribute('required') && !this.value) {
+                    this.style.borderColor = 'var(--color-primary)';
+                    this.style.boxShadow = '0 0 0 3px rgba(244, 67, 54, 0.1)';
+                } else {
+                    this.style.borderColor = '';
+                    this.style.boxShadow = '';
+                }
+            });
+
+            field.addEventListener('input', function() {
+                if (this.value && this.style.borderColor) {
+                    this.style.borderColor = '';
+                    this.style.boxShadow = '';
+                }
+            });
+        });
+
+        // ===== GLOBAL ERROR HANDLER =====
+        window.addEventListener('error', function(event) {
+            console.error('Application Error:', event.error);
+        });
+
+        window.addEventListener('unhandledrejection', function(event) {
+            console.error('Unhandled Promise Rejection:', event.reason);
         });
     </script>
 </body>
