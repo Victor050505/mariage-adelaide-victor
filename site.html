@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adélaïde & Victor — 3-5 juillet 2028</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: #fff;
+            border-bottom: 1px solid #f0f0f0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #8B1A1A;
+            font-size: 13px;
+            letter-spacing: 1px;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.7;
+        }
+
+        /* Sections */
+        section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 40px;
+            scroll-margin-top: 60px;
+        }
+
+        /* Hero */
+        #hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #fff;
+        }
+
+        #hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 90px;
+            font-weight: 300;
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+            color: #8B1A1A;
+        }
+
+        #hero h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 70px;
+            font-weight: 300;
+            font-style: italic;
+            margin-bottom: 60px;
+            color: #8B1A1A;
+        }
+
+        #hero .names {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            letter-spacing: 2px;
+            margin: 60px 0 20px;
+            font-weight: 400;
+            color: #8B1A1A;
+        }
+
+        #hero .date {
+            font-size: 14px;
+            letter-spacing: 2px;
+            color: #8B1A1A;
+            margin-bottom: 40px;
+        }
+
+        /* Sections styling */
+        section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 56px;
+            font-weight: 300;
+            margin-bottom: 50px;
+            text-align: center;
+            color: #8B1A1A;
+        }
+
+        section p {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .event-info {
+            background: #f9f9f9;
+            padding: 40px;
+            border-radius: 4px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .event-info h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 400;
+            color: #8B1A1A;
+            margin-bottom: 15px;
+        }
+
+        .event-info p {
+            font-size: 14px;
+            margin: 8px 0;
+        }
+
+        /* Grid pour infos pratiques */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 40px 0;
+        }
+
+        .grid-2 .card {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 4px;
+        }
+
+        .grid-2 .card h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-weight: 400;
+            color: #8B1A1A;
+            margin-bottom: 15px;
+        }
+
+        .grid-2 .card p {
+            font-size: 13px;
+            color: #666;
+            text-align: left;
+        }
+
+        /* Formulaire RSVP */
+        .rsvp-form {
+            max-width: 500px;
+            margin: 40px auto;
+            background: #f9f9f9;
+            padding: 40px;
+            border-radius: 4px;
+        }
+
+        .rsvp-form input,
+        .rsvp-form select,
+        .rsvp-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 15px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+        }
+
+        .rsvp-form button {
+            width: 100%;
+            padding: 14px;
+            background: #8B1A1A;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            letter-spacing: 1px;
+            font-weight: 500;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .rsvp-form button:hover {
+            opacity: 0.9;
+        }
+
+        /* Séparateur */
+        .divider {
+            width: 60px;
+            height: 1px;
+            background: #8B1A1A;
+            margin: 40px auto;
+            opacity: 0.3;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 20px;
+                padding: 15px;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            #hero h1 {
+                font-size: 60px;
+            }
+
+            #hero h2 {
+                font-size: 50px;
+            }
+
+            section h2 {
+                font-size: 40px;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#accueil">ACCUEIL</a></li>
+            <li><a href="#ceremonie">CÉRÉMONIE</a></li>
+            <li><a href="#cocktail">COCKTAIL</a></li>
+            <li><a href="#brunch">BRUNCH</a></li>
+            <li><a href="#infos">INFOS</a></li>
+            <li><a href="#rsvp">RSVP</a></li>
+        </ul>
+    </nav>
+
+    <!-- ACCUEIL -->
+    <section id="accueil" style="height: 100vh; display: flex; flex-direction: column; justify-content: center;">
+        <h1 style="font-family: 'Cormorant Garamond', serif; font-size: 90px; font-weight: 300; letter-spacing: 4px; margin-bottom: 10px; color: #8B1A1A; text-align: center;">SAVE</h1>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 70px; font-weight: 300; font-style: italic; margin-bottom: 60px; color: #8B1A1A; text-align: center;">the DATE</h2>
+        <p class="names" style="text-align: center;">Adélaïde & Victor</p>
+        <p class="date" style="text-align: center;">3 • 4 • 5 juillet 2028</p>
+        <p style="text-align: center; font-size: 14px; color: #8B1A1A;">Terres des Arson, Drôme Provençale</p>
+    </section>
+
+    <!-- CÉRÉMONIE LAÏQUE -->
+    <section id="ceremonie">
+        <h2>Cérémonie Laïque</h2>
+        <div class="divider"></div>
+        <p>Un moment intime et personnel pour célébrer notre union.</p>
+        <div class="event-info">
+            <h3>Samedi 3 juillet</h3>
+            <p><strong>15h00</strong></p>
+            <p>Terres des Arson</p>
+            <p style="margin-top: 20px; font-size: 13px;">Accueil à partir de 14h30</p>
+        </div>
+        <p style="margin-top: 40px; font-size: 14px;">Tenue élégante de cocktail<br>Tonalités blanc, ivoire et beige</p>
+    </section>
+
+    <!-- COCKTAIL & DÎNER -->
+    <section id="cocktail">
+        <h2>Cocktail & Dîner</h2>
+        <div class="divider"></div>
+        <p>Un moment de partage autour d'un repas gastronomique.</p>
+        <div class="event-info">
+            <h3>Samedi 3 juillet</h3>
+            <p><strong>18h00 - 23h00</strong></p>
+            <p>Terres des Arson</p>
+        </div>
+        <p style="margin-top: 40px; font-size: 14px;">Menu gastronomique local<br>Animations et danse toute la soirée</p>
+    </section>
+
+    <!-- BRUNCH -->
+    <section id="brunch">
+        <h2>Brunch</h2>
+        <div class="divider"></div>
+        <p>Un dernier moment convivial en famille et entre amis.</p>
+        <div class="event-info">
+            <h3>Dimanche 4 juillet</h3>
+            <p><strong>11h00 - 14h00</strong></p>
+            <p>Terres des Arson</p>
+        </div>
+        <p style="margin-top: 40px; font-size: 14px;">Buffet champêtre en terrasse<br>Tenue décontractée</p>
+    </section>
+
+    <!-- INFORMATIONS PRATIQUES -->
+    <section id="infos">
+        <h2>Informations Pratiques</h2>
+        <div class="divider"></div>
+
+        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 400; color: #8B1A1A; text-align: center; margin-top: 50px; margin-bottom: 30px;">Adresse</h3>
+        <p style="text-align: center; font-size: 15px; margin-bottom: 50px;">Terres des Arson<br>Drôme Provençale</p>
+
+        <div class="grid-2">
+            <div class="card">
+                <h4>🚗 Accès & Parking</h4>
+                <p>Parking gratuit sur place<br><br>Gare de Montélimar à 20 min<br>Gare d'Avignon à 50 min<br><br>Plan d'accès fourni avec invitation</p>
+            </div>
+            <div class="card">
+                <h4>🏨 Hébergement</h4>
+                <p>Une sélection de chambres d'hôtes, gîtes et hôtels à proximité sera fournie avec votre invitation</p>
+            </div>
+        </div>
+
+        <div class="grid-2">
+            <div class="card">
+                <h4>👕 Dress Code</h4>
+                <p><strong>Vendredi & Samedi:</strong><br>Tenue élégante de cocktail<br>Tonalités blanc, ivoire, beige<br><br><strong>Dimanche:</strong><br>Tenue décontractée</p>
+            </div>
+            <div class="card">
+                <h4>ℹ️ Informations</h4>
+                <p>Allergies alimentaires?<br>Préférences particulières?<br><br>Signalez-les lors de votre RSVP</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP -->
+    <section id="rsvp">
+        <h2>RSVP</h2>
+        <div class="divider"></div>
+        <p style="margin-bottom: 40px;">Merci de confirmer votre présence avant le 15 mai 2028</p>
+
+        <form class="rsvp-form" onsubmit="handleRSVP(event)">
+            <input type="text" placeholder="Votre nom" required>
+            <input type="email" placeholder="Votre email" required>
+            <input type="tel" placeholder="Votre téléphone" required>
+            <select required>
+                <option value="">Présence</option>
+                <option value="oui">Je confirme ma présence</option>
+                <option value="non">Je suis désolé(e), je ne peux pas venir</option>
+            </select>
+            <input type="number" placeholder="Nombre de personnes" min="1" value="1">
+            <select required>
+                <option value="">Régime alimentaire</option>
+                <option value="omnivore">Sans restrictions</option>
+                <option value="vegetarien">Végétarien</option>
+                <option value="vegan">Vegan</option>
+                <option value="sans-gluten">Sans gluten</option>
+                <option value="autre">Autre</option>
+            </select>
+            <textarea placeholder="Observations particulières" rows="4"></textarea>
+            <button type="submit">ENVOYER</button>
+        </form>
+    </section>
+
+    <script>
+        function handleRSVP(event) {
+            event.preventDefault();
+            alert('Merci ! Votre RSVP a bien été reçu.');
+            event.target.reset();
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

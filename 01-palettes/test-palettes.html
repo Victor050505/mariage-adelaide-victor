@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Palettes Mariage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #f5f5f5;
+            padding: 40px 20px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .version {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .version-label {
+            padding: 20px;
+            background: #333;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* VERSION VERT */
+        .vert {
+            background: #3D5247;
+            color: #E8E4DB;
+            padding: 100px 40px;
+            text-align: center;
+            min-height: 900px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .vert h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 90px;
+            font-weight: 300;
+            margin: 0;
+            letter-spacing: 6px;
+            line-height: 1;
+        }
+
+        .vert h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 80px;
+            font-weight: 300;
+            font-style: italic;
+            margin: 20px 0 80px 0;
+            opacity: 1;
+            letter-spacing: 2px;
+            line-height: 1;
+        }
+
+        .vert .divider {
+            display: none;
+        }
+
+        .vert .info {
+            font-size: 11px;
+            letter-spacing: 2px;
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        .vert .date {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            margin: 30px 0;
+            font-weight: 300;
+        }
+
+        /* VERSION ROUGE */
+        .rouge {
+            background: #F5F1E8;
+            color: #8B1A1A;
+            padding: 100px 40px;
+            text-align: center;
+            min-height: 900px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .rouge h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 90px;
+            font-weight: 300;
+            margin: 0;
+            letter-spacing: 6px;
+            line-height: 1;
+        }
+
+        .rouge h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 80px;
+            font-weight: 300;
+            font-style: italic;
+            margin: 20px 0 80px 0;
+            opacity: 1;
+            letter-spacing: 2px;
+            line-height: 1;
+        }
+
+        .rouge .divider {
+            display: none;
+        }
+
+        .rouge .info {
+            font-size: 11px;
+            letter-spacing: 2px;
+            margin: 0;
+            opacity: 0.85;
+        }
+
+        .rouge .date {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            margin: 30px 0;
+            font-weight: 300;
+        }
+
+        .champagne-svg {
+            width: 160px;
+            height: 160px;
+            margin: 60px 0;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        h3 {
+            text-align: center;
+            margin: 40px 0 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h3 style="margin-top: 0;">🎨 TEST DES DEUX PALETTES</h3>
+
+    <div class="container">
+        <!-- VERSION VERT -->
+        <div class="version">
+            <div class="version-label">✨ OPTION 1 : VERT FONCÉ + CRÈME</div>
+            <div class="vert">
+                <div>
+                    <h1>SAVE</h1>
+                    <h2>the DATE</h2>
+                </div>
+                <svg class="champagne-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Coupes pyramide avec fleurs -->
+                    <ellipse cx="100" cy="30" rx="12" ry="7" stroke="currentColor" fill="none" stroke-width="1"/>
+                    <path d="M88 36 Q88 45 100 50 Q112 45 112 36" stroke="currentColor" fill="none" stroke-width="1"/>
+                    <ellipse cx="75" cy="55" rx="12" ry="7" stroke="currentColor" fill="none" stroke-width="1"/>
+                    <path d="M63 61 Q63 70 75 75 Q87 70 87 61" stroke="currentColor" fill="none" stroke-width="1"/>
+                    <ellipse cx="125" cy="55" rx="12" ry="7" stroke="currentColor" fill="none" stroke-width="1"/>
+                    <path d="M113 61 Q113 70 125 75 Q137 70 137 61" stroke="currentColor" fill="none" stroke-width="1"/>
+                    <ellipse cx="55" cy="80" rx="12" ry="7" stroke="currentColor" fill="none" stroke-width="1"/>
+                    <path d="M43 86 Q43 95 55 100 Q67 95 67 86" stroke="currentColor" fill="none" stroke-width="1"/>
+                    <ellipse cx="100" cy="80" rx="12" ry="7" stroke="currentColor" fill="none" stroke-width="1"/>
+                    <path d="M88 86 Q88 95 100 100 Q112 95 112 86" stroke="currentColor" fill="none" stroke-width="1"/>
+                    <ellipse cx="145" cy="80" rx="12" ry="7" stroke="currentColor" fill="none" stroke-width="1"/>
+                    <path d="M133 86 Q133 95 145 100 Q157 95 157 86" stroke="currentColor" fill="none" stroke-width="1"/>
+                    <!-- Fleurs en bas -->
+                    <g opacity="0.8">
+                        <path d="M40 130 Q35 135 30 140" stroke="currentColor" fill="none" stroke-width="1"/>
+                        <circle cx="35" cy="138" r="2" fill="currentColor"/>
+                        <path d="M100 145 Q95 150 90 155" stroke="currentColor" fill="none" stroke-width="1"/>
+                        <circle cx="95" cy="153" r="2" fill="currentColor"/>
+                        <path d="M160 130 Q165 135 170 140" stroke="currentColor" fill="none" stroke-width="1"/>
+                        <circle cx="165" cy="138" r="2" fill="currentColor"/>
+                    </g>
+                </svg>
+                <div>
+                    <p class="info">Adélaïde & Victor</p>
+                    <p class="info" style="margin-top: 20px;">INVITATION À SUIVRE</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- VERSION ROUGE -->
+        <div class="version">
+            <div class="version-label">✨ OPTION 2 : BLANC + ROUGE</div>
+            <div class="rouge">
+                <div>
+                    <h1>SAVE</h1>
+                    <h2>the DATE</h2>
+                </div>
+                <svg class="champagne-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Coupes pyramide avec fleurs -->
+                    <ellipse cx="100" cy="30" rx="12" ry="7" stroke="currentColor" fill="none" stroke-width="1"/>
+                    <path d="M88 36 Q88 45 100 50 Q112 45 112 36" stroke="currentColor" fill="none" stroke-width="1"/>
+                    <ellipse cx="75" cy="55" rx="12" ry="7" stroke="currentColor" fill="none" stroke-width="1"/>
+                    <path d="M63 61 Q63 70 75 75 Q87 70 87 61" stroke="currentColor" fill="none" stroke-width="1"/>
+                    <ellipse cx="125" cy="55" rx="12" ry="7" stroke="currentColor" fill="none" stroke-width="1"/>
+                    <path d="M113 61 Q113 70 125 75 Q137 70 137 61" stroke="currentColor" fill="none" stroke-width="1"/>
+                    <ellipse cx="55" cy="80" rx="12" ry="7" stroke="currentColor" fill="none" stroke-width="1"/>
+                    <path d="M43 86 Q43 95 55 100 Q67 95 67 86" stroke="currentColor" fill="none" stroke-width="1"/>
+                    <ellipse cx="100" cy="80" rx="12" ry="7" stroke="currentColor" fill="none" stroke-width="1"/>
+                    <path d="M88 86 Q88 95 100 100 Q112 95 112 86" stroke="currentColor" fill="none" stroke-width="1"/>
+                    <ellipse cx="145" cy="80" rx="12" ry="7" stroke="currentColor" fill="none" stroke-width="1"/>
+                    <path d="M133 86 Q133 95 145 100 Q157 95 157 86" stroke="currentColor" fill="none" stroke-width="1"/>
+                    <!-- Fleurs en bas -->
+                    <g opacity="0.8">
+                        <path d="M40 130 Q35 135 30 140" stroke="currentColor" fill="none" stroke-width="1"/>
+                        <circle cx="35" cy="138" r="2" fill="currentColor"/>
+                        <path d="M100 145 Q95 150 90 155" stroke="currentColor" fill="none" stroke-width="1"/>
+                        <circle cx="95" cy="153" r="2" fill="currentColor"/>
+                        <path d="M160 130 Q165 135 170 140" stroke="currentColor" fill="none" stroke-width="1"/>
+                        <circle cx="165" cy="138" r="2" fill="currentColor"/>
+                    </g>
+                </svg>
+                <div>
+                    <p class="info">Adélaïde & Victor</p>
+                    <p class="info" style="margin-top: 20px;">INVITATION À SUIVRE</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

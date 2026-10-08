@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Palettes Mariage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #f5f5f5;
+            padding: 40px 20px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .version {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .version-label {
+            padding: 20px;
+            background: #333;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* VERSION VERT */
+        .vert {
+            background: #3D5247;
+            color: #F5F1E8;
+            padding: 60px 40px;
+            text-align: center;
+            min-height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .vert h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 56px;
+            font-weight: 400;
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+        }
+
+        .vert h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            font-weight: 400;
+            font-style: italic;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .vert .divider {
+            width: 60px;
+            height: 2px;
+            background: #F5F1E8;
+            margin: 30px auto;
+            opacity: 0.7;
+        }
+
+        .vert .info {
+            font-size: 14px;
+            letter-spacing: 1px;
+            margin: 15px 0;
+            opacity: 0.9;
+        }
+
+        .vert .date {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            margin: 20px 0;
+        }
+
+        /* VERSION ROUGE */
+        .rouge {
+            background: #F5F1E8;
+            color: #8B1A1A;
+            padding: 60px 40px;
+            text-align: center;
+            min-height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .rouge h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 56px;
+            font-weight: 400;
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+        }
+
+        .rouge h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            font-weight: 400;
+            font-style: italic;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .rouge .divider {
+            width: 60px;
+            height: 2px;
+            background: #8B1A1A;
+            margin: 30px auto;
+            opacity: 0.6;
+        }
+
+        .rouge .info {
+            font-size: 14px;
+            letter-spacing: 1px;
+            margin: 15px 0;
+            opacity: 0.85;
+        }
+
+        .rouge .date {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            margin: 20px 0;
+        }
+
+        .champagne-svg {
+            width: 60px;
+            height: 60px;
+            margin: 20px 0;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        h3 {
+            text-align: center;
+            margin: 40px 0 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h3 style="margin-top: 0;">🎨 TEST DES DEUX PALETTES</h3>
+
+    <div class="container">
+        <!-- VERSION VERT -->
+        <div class="version">
+            <div class="version-label">✨ OPTION 1 : VERT FONCÉ + CRÈME</div>
+            <div class="vert">
+                <h1>SAVE</h1>
+                <h2>the DATE</h2>
+                <div class="divider"></div>
+                <p class="info">Adélaïde & Victor</p>
+                <p class="date">3 • 4 • 5 juillet 2028</p>
+                <p class="info">Terres des Arson</p>
+                <svg class="champagne-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 10 L60 30 Q50 40 40 30 Z" stroke="currentColor" fill="none" stroke-width="1.5"/>
+                    <circle cx="50" cy="45" r="12" stroke="currentColor" fill="none" stroke-width="1.5"/>
+                    <line x1="50" y1="57" x2="50" y2="80" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="38" y1="60" x2="35" y2="75" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="62" y1="60" x2="65" y2="75" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+                <p class="info" style="margin-top: 30px;">Invitation à suivre</p>
+            </div>
+        </div>
+
+        <!-- VERSION ROUGE -->
+        <div class="version">
+            <div class="version-label">✨ OPTION 2 : BLANC + ROUGE</div>
+            <div class="rouge">
+                <h1>SAVE</h1>
+                <h2>the DATE</h2>
+                <div class="divider"></div>
+                <p class="info">Adélaïde & Victor</p>
+                <p class="date">3 • 4 • 5 juillet 2028</p>
+                <p class="info">Terres des Arson</p>
+                <svg class="champagne-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 10 L60 30 Q50 40 40 30 Z" stroke="currentColor" fill="none" stroke-width="1.5"/>
+                    <circle cx="50" cy="45" r="12" stroke="currentColor" fill="none" stroke-width="1.5"/>
+                    <line x1="50" y1="57" x2="50" y2="80" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="38" y1="60" x2="35" y2="75" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="62" y1="60" x2="65" y2="75" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+                <p class="info" style="margin-top: 30px;">Invitation à suivre</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Options Hero - Mariage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #f5f5f5;
+        }
+
+        .option {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .label {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        /* OPTION 1: Minimaliste Blanc/Crème */
+        .option1 {
+            background: linear-gradient(135deg, #fafaf8 0%, #fff 100%);
+        }
+
+        .option1 .hero-text h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 140px;
+            font-weight: 300;
+            color: #8B1A1A;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+            line-height: 0.9;
+        }
+
+        .option1 .hero-text p {
+            font-size: 16px;
+            letter-spacing: 2px;
+            color: #8B1A1A;
+            margin-top: 30px;
+        }
+
+        /* OPTION 2: Fond Sombre Burgundy */
+        .option2 {
+            background: linear-gradient(135deg, #2d0a0a 0%, #8B1A1A 100%);
+        }
+
+        .option2 .hero-text h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 140px;
+            font-weight: 300;
+            color: #fff;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+            line-height: 0.9;
+        }
+
+        .option2 .hero-text p {
+            font-size: 16px;
+            letter-spacing: 2px;
+            color: #fff;
+            margin-top: 30px;
+            opacity: 0.95;
+        }
+
+        /* OPTION 3: Minimaliste Très Simple */
+        .option3 {
+            background: #ffffff;
+        }
+
+        .option3 .hero-text h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 120px;
+            font-weight: 300;
+            color: #8B1A1A;
+            letter-spacing: 3px;
+            margin-bottom: 25px;
+            line-height: 1;
+        }
+
+        .option3 .hero-text p {
+            font-size: 14px;
+            letter-spacing: 2px;
+            color: #666;
+            margin-top: 35px;
+            font-weight: 300;
+        }
+
+        .hero-text {
+            text-align: center;
+            z-index: 2;
+        }
+
+        .hero-text h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            letter-spacing: 2px;
+            font-weight: 300;
+            text-transform: uppercase;
+            margin: 20px 0;
+        }
+
+        .option1 .hero-text h2 {
+            color: #8B1A1A;
+        }
+
+        .option2 .hero-text h2 {
+            color: #fff;
+        }
+
+        .option3 .hero-text h2 {
+            color: #8B1A1A;
+        }
+
+        .divider {
+            width: 60px;
+            height: 1px;
+            background: currentColor;
+            margin: 20px auto;
+            opacity: 0.4;
+        }
+
+        .choice {
+            position: absolute;
+            bottom: 30px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .option1 .hero-text h1,
+            .option2 .hero-text h1 {
+                font-size: 70px;
+            }
+
+            .option3 .hero-text h1 {
+                font-size: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- OPTION 1: Minimaliste Blanc/Crème -->
+    <div class="option option1">
+        <div class="label">OPTION 1: Minimaliste Blanc/Crème</div>
+        <div class="hero-text">
+            <h1>Adélaïde<br>& Victor</h1>
+            <h2>Se marient</h2>
+            <div class="divider"></div>
+            <p>3 • 4 • 5 juillet 2028</p>
+            <p style="margin-top: 15px; font-size: 14px;">Les Terres de Sarson — Grignan</p>
+        </div>
+        <div class="choice">Épuré, élégant, minimaliste</div>
+    </div>
+
+    <!-- OPTION 2: Fond Sombre Burgundy -->
+    <div class="option option2">
+        <div class="label" style="background: rgba(255,255,255,0.2);">OPTION 2: Fond Sombre Burgundy</div>
+        <div class="hero-text">
+            <h1>Adélaïde<br>& Victor</h1>
+            <h2>Se marient</h2>
+            <div class="divider"></div>
+            <p>3 • 4 • 5 juillet 2028</p>
+            <p style="margin-top: 15px; font-size: 14px;">Les Terres de Sarson — Grignan</p>
+        </div>
+        <div class="choice">Luxe, dramatique, premium</div>
+    </div>
+
+    <!-- OPTION 3: Très Minimaliste -->
+    <div class="option option3">
+        <div class="label">OPTION 3: Très Minimaliste</div>
+        <div class="hero-text">
+            <h1>Adélaïde & Victor</h1>
+            <p style="font-size: 13px; letter-spacing: 2px; color: #8B1A1A; text-transform: uppercase;">Se marient le 3 juillet 2028</p>
+            <p style="font-size: 14px; color: #999; margin-top: 50px;">Les Terres de Sarson<br>Grignan, Drôme Provençale</p>
+        </div>
+        <div class="choice">Ultra simple, blanc, premium</div>
+    </div>
+
+</body>
+</html>
